@@ -3,7 +3,7 @@
     margin: 0;
     font-family: Leelawadee
 }
-button:hover,input[type="submit"]:hover{
+.button:hover{
     cursor: pointer;
     filter: brightness(0.9);
 }
@@ -17,7 +17,7 @@ body{
     background-color: rgb(255, 147, 46);
 }
 .header{
-        border-bottom: 5px solid rgb(204, 92, 0);
+    border-bottom: 5px solid rgb(204, 92, 0);
     box-sizing: border-box;
     padding: 10px;
     display: flex;
@@ -28,6 +28,7 @@ body{
     width: 100%;
     border-radius:0px 0px 15px 15px;
 }
+
 .header__logo{
     height: 100%;
 }
@@ -38,90 +39,32 @@ body{
 .header__link--active{
    color: rgb(46, 119, 255);
 }
-.form h1{
-    color: rgb(255, 147, 46)
-}
-.form{
-    border-bottom: 5px solid rgb(204, 92, 0);
-    animation-name:form-animation;
-    animation-delay:0s;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    align-items: baseline;
-    row-gap: 5px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: rgb(255, 255, 255);
-    width: 90%;
-    border-radius: 15px;
-}
-@keyframes form-animation {
+
+@keyframes container-animation {
    0%{
     transform:scaleX(0);
    }
 }
-.form input[type="text"],.form input[type="email"]{
+.form__input--text{
     width: 50%;
     box-sizing: border-box;
     padding: 5px;   
     border-radius: 5px;
     border: 1px solid rgb(189, 189, 189);
 }
-.form input[type="date"]{
+.form__input--date{
    padding: 5px;   
     border-radius: 5px;
     border: 1px solid rgb(189, 189, 189); 
 
 }
-.form input[type="radio"]{
-    background-color: red;
-}
-.form input[type="submit"]{
-    padding: 10px;
-    background-color: rgb(46, 119, 255);
-    color: white;
-    border: none;
-    border-radius: 6px;
-}
-.saved-user{
-    border-bottom: 5px solid rgb(204, 92, 0);
-    animation-name:form-animation;
-    animation-delay:0s;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-        border-bottom: 5px solid rgb(204, 92, 0);
-    align-items: baseline;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: rgb(255, 255, 255);
-    width: 90%;
-    border-radius: 15px;
-
-    box-sizing:border-box;
-}
-.saved-user h2{
-    color:rgb(255, 147, 46);
-}
 .saved-user__field{
     margin-top: 5px;
-
     flex-direction: column;
     display:flex;
 }
 .saved-user__title{
     font-weight: 600;
-}
-.saved-user button{
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    width:fit-content;
-    background-color: rgb(255, 147, 46);
-    color: white;
 }
 .slug{
     animation-name:slug-animation;
@@ -140,9 +83,9 @@ body{
    } 
 }
 .users-list{
-    
+      border-bottom: 5px solid rgb(204, 92, 0);
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 20px;
     width: 90%;
     box-sizing: border-box;
@@ -153,45 +96,7 @@ body{
 }
 
 
-@media (max-width:2200px){
-    .users-list{
-
-    grid-template-columns: repeat(6,1fr);
-    }
-}
-
-@media (max-width:1900px){
-    .users-list{
-
-    grid-template-columns: repeat(5,1fr);
-    }
-}
-@media (max-width:1500px){
-    .users-list{
-
-    grid-template-columns: repeat(4,1fr);
-    }
-}
-@media (max-width:1200px){
-    .users-list{
-
-    grid-template-columns: repeat(3,1fr);
-    }
-}
-@media (max-width:900px){
-    .users-list{
-
-    grid-template-columns: repeat(2,1fr);
-    }
-}
-@media (max-width:600px){
-    .users-list{
-
-    grid-template-columns: repeat(1,1fr);
-    }
-}
-.users{
-    
+.users-list__user{
     align-items: baseline;
     display: flex;
     flex-direction: column;
@@ -200,7 +105,47 @@ body{
     box-sizing: border-box;
     padding: 10px;
 }
-.users img{
+.users-list__image{
     height: 20px;
     aspect-ratio: 1/1;
+}
+.users-list__title{
+    font-weight: 800;
+}
+.pattern-container__title{
+    color: rgb(255, 147, 46);
+}
+.pattern-container{
+    border-bottom: 5px solid rgb(204, 92, 0);
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    column-gap: 10px;
+    height: auto;
+    flex-direction: column;
+    background-color: white;
+    align-items: baseline;
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 10px;
+    animation-name:container-animation;
+    animation-delay:0s;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+}
+
+.action-link{
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+.action-link--primary{
+   background-color: rgb(87, 87, 255);
+}
+.action-link--danger{
+   background-color: rgb(240, 64, 64);
 }

@@ -26,6 +26,20 @@
         case "show_users":
             include("show_users.php");
         break;
+
+        case "delete":
+            include("delete.php");
+            break;
+        case "deleted":
+            include("deleted.php");
+            break;
+        case "update":
+            include("update.php");
+            break;
+            case "updated":
+            include("updated.php");
+            break;
+
         default:
         break;
     }

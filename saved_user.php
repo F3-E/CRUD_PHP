@@ -1,5 +1,5 @@
-<div class="saved-user">
-    <h2>Usuário salvo</h2>
+<div class="saved-user pattern-container">
+    <h2 class="pattern-container__title">Usuário salvo</h2>
      <div class="saved-user__field">
     <label class="saved-user__title">Nome:</label><label><?= $_POST["name"] ?></label>
     </div>
@@ -12,7 +12,7 @@
     <div class="saved-user__field">
     <label class="saved-user__title">Nascimento</label><label><?= $_POST["date"] ?></label>
     </div>
-    <button> Ver usuarios</button>
+    <a href="?page=show_users" class="action-link action-link--primary"> Ver usuarios</a>
 
     <?php
     if($_POST["name"]!=""){
@@ -27,7 +27,7 @@
     $_POST = "";
 
     $req = $conn->query($sql);
-    
+        
     }
 
     ?>
